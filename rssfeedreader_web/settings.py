@@ -26,7 +26,8 @@ SECRET_KEY = os.environ.get('PROD_RSSFEEDREADERWEB_SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '0.0.0.0'
+    'https://infinite-scrubland-11563.herokuapp.com/',
+    'http://127.0.0.1'
 ]
 
 # Application definition
