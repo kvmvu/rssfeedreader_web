@@ -1,0 +1,1 @@
+web: gunicorn rssfeedreader_web.wsgi
