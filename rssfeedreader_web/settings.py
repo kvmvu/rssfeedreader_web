@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +28,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'https://infinite-scrubland-11563.herokuapp.com/',
-    'http://127.0.0.1'
+    'http://127.0.0.1',
+    '0.0.0.0'
 ]
 
 # Application definition
@@ -133,3 +135,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SITE_ID = 1
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
