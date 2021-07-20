@@ -1,0 +1,10 @@
+{
+  "name": "rssfeedreader_web",
+  "version": "1.0.0",
+  "dependencies": {
+    "vue-read-more": "^1.1.1"
+  },
+  "devDependencies": {
+    "masonry-layout": "^4.2.2"
+  }
+}
