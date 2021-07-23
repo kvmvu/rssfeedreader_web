@@ -13,6 +13,7 @@ import os
 import environ
 import django_heroku
 from pathlib import Path
+
 environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -181,3 +182,5 @@ LOGGING = {
         },
     }
 }
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
