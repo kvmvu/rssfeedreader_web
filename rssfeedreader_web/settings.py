@@ -26,8 +26,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.environ.get('DEV_RSSFEEDREADERWEB_SECRET_KEY')
-# SECRET_KEY = os.environ.get('PROD_RSSFEEDREADERWEB_SECRET_KEY')
 SECRET_KEY = os.environ['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -90,13 +88,6 @@ WSGI_APPLICATION = 'rssfeedreader_web.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES['default'] = dj_database_url.config(default='postgres://innxcfjuwpefng:96edd4c8c06287395c5a6eec3fc4e9ce86c112aae6c953c0eeb2cb31a79781ab@ec2-34-233-114-40.compute-1.amazonaws.com:5432/ddejtm0luuv1db')
 
 # Password validation
@@ -151,6 +142,7 @@ SITE_ID = 1
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
+# Logging
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
