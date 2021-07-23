@@ -1,6 +1,7 @@
 import feedparser
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 
 from .models import Feed
@@ -19,6 +20,7 @@ def index(request):
     return render(request, 'frontpage.html', context)
 
 
+@csrf_exempt
 def rest_feeds(request):
     if request.method == 'GET':
         feeds = Feed.objects.all()
@@ -36,6 +38,7 @@ def rest_feeds(request):
         return JsonResponse(serializer.errors, status=400)
 
 
+@csrf_exempt
 def rest_feeds_detail(request, pk):
     try:
         feed = Feed.objects.get(pk=pk)
@@ -61,6 +64,7 @@ def rest_feeds_detail(request, pk):
         return HttpResponse()
 
 
+@csrf_exempt
 def rest_items(request):
     feeds = Feed.objects.all()
 

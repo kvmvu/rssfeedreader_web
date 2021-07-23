@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 import environ
 import django_heroku
+import dj_database_url
 from pathlib import Path
+
+from django.conf.global_settings import DATABASES
 
 environ.Env.read_env()
 
@@ -87,12 +90,14 @@ WSGI_APPLICATION = 'rssfeedreader_web.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+DATABASES['default'] = dj_database_url.config(default='postgres://innxcfjuwpefng:96edd4c8c06287395c5a6eec3fc4e9ce86c112aae6c953c0eeb2cb31a79781ab@ec2-34-233-114-40.compute-1.amazonaws.com:5432/ddejtm0luuv1db')
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
