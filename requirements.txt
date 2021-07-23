@@ -10,6 +10,7 @@ Django==3.1.8
 django-appconf==1.0.4
 django-classy-tags==2.0.0
 django-clear-cache==0.3
+django-environ==0.4.5
 django-formtools==2.3
 django-heroku==0.0.0
 django-sekizai==2.0.0
