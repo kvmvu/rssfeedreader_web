@@ -1,5 +1,6 @@
 appdirs==1.4.4
 asgiref==3.4.1
+backports-datetime-fromisoformat==1.0.0
 black==21.6b0
 certifi==2021.5.30
 chardet==4.0.0
@@ -10,9 +11,12 @@ Django==3.1.8
 django-appconf==1.0.4
 django-classy-tags==2.0.0
 django-clear-cache==0.3
+django-dynamic-path==0.0.5
+django-early-return==0.0.1
 django-environ==0.4.5
 django-formtools==2.3
 django-heroku==0.0.0
+django-referer-csrf==0.0.1
 django-sekizai==2.0.0
 django-treebeard==4.5.1
 djangorestframework==3.12.4
@@ -36,7 +40,6 @@ six==1.16.0
 sqlparse==0.4.1
 svgwrite==1.4.1
 toml==0.10.2
-Tree==0.2.4
 urllib3==1.26.5
 validators==0.18.2
 whitenoise==5.3.0
